@@ -3,10 +3,12 @@ import { ProfileHeader } from "@/components/ProfileHeader";
 import { ProfileTabs } from "@/components/ProfileTabs";
 import { ProfileSidebar } from "@/components/ProfileSidebar";
 import { Feed } from "@/components/Feed";
+import { Butterfly3D } from "@/components/Butterfly3D";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Butterfly3D />
       <Header />
       
       <main className="container mx-auto px-4 py-6">
