@@ -31,7 +31,7 @@ export const Header = () => {
               <span className="text-lg font-bold text-white">FU</span>
             </div>
             <span className="text-xl font-bold bg-gradient-cosmic bg-clip-text text-transparent">
-              Fu Profile
+              Fun Profile
             </span>
           </div>
           
