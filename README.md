@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/71fcb776-e1e9-4d2c-b724-437b25ebd2c4
+**URL**: https://lovable.dev/projects/f06fbccb-088c-4170-8736-4f1a09d4d572
 
 ## How can I edit this code?
 
@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/71fcb776-e1e9-4d2c-b724-437b25ebd2c4) and start prompting.
+Simply visit the [Lovable Project](https://lovable.dev/projects/f06fbccb-088c-4170-8736-4f1a09d4d572) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -62,7 +62,7 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/71fcb776-e1e9-4d2c-b724-437b25ebd2c4) and click on Share -> Publish.
+Simply open [Lovable](https://lovable.dev/projects/f06fbccb-088c-4170-8736-4f1a09d4d572) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 
@@ -71,3 +71,7 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+“Test sync ngược 12/11/2025”
+"Test 16 Nov 2025"
+"Minh Tri test push code ngay 18/11/2025"
