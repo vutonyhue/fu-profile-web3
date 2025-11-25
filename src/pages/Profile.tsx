@@ -71,7 +71,7 @@ const Profile = () => {
         .from('profiles')
         .select('*')
         .eq('id', profileId)
-        .single();
+        .maybeSingle();
 
       if (error) throw error;
       setProfile(data);
@@ -228,11 +228,13 @@ const Profile = () => {
 
           {/* Honor Board - Right Side */}
           <div className="lg:col-span-4 hidden lg:block">
-            <ProfileHonorBoard 
-              userId={profile.id}
-              username={profile.username}
-              avatarUrl={profile.avatar_url}
-            />
+            {profile && (
+              <ProfileHonorBoard 
+                userId={profile.id}
+                username={profile.username}
+                avatarUrl={profile.avatar_url}
+              />
+            )}
           </div>
         </div>
       </main>
