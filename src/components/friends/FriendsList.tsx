@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 interface Friend {
   id: string;
   username: string;
-  full_name: string;
   avatar_url: string;
   friendship_id: string;
 }
@@ -87,7 +86,7 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
     // Fetch all profiles in one query
     const { data: profilesData, error: profilesError } = await supabase
       .from("profiles")
-      .select("id, username, full_name, avatar_url")
+      .select("id, username, avatar_url")
       .in("id", userIds);
 
     if (profilesError) {
@@ -104,7 +103,6 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
       return {
         id: profile?.id || friendId,
         username: profile?.username || "Unknown",
-        full_name: profile?.full_name || "",
         avatar_url: profile?.avatar_url || "",
         friendship_id: friendship.id
       };
@@ -135,7 +133,7 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
     const userIds = data.map(f => f.user_id);
     const { data: profilesData, error: profilesError } = await supabase
       .from("profiles")
-      .select("id, username, full_name, avatar_url")
+      .select("id, username, avatar_url")
       .in("id", userIds);
 
     if (profilesError) {
@@ -148,7 +146,6 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
       return {
         id: profile?.id || friendship.user_id,
         username: profile?.username || "Unknown",
-        full_name: profile?.full_name || "",
         avatar_url: profile?.avatar_url || "",
         friendship_id: friendship.id
       };
@@ -178,7 +175,7 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
     const friendIds = data.map(f => f.friend_id);
     const { data: profilesData, error: profilesError } = await supabase
       .from("profiles")
-      .select("id, username, full_name, avatar_url")
+      .select("id, username, avatar_url")
       .in("id", friendIds);
 
     if (profilesError) {
@@ -191,7 +188,6 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
       return {
         id: profile?.id || friendship.friend_id,
         username: profile?.username || "Unknown",
-        full_name: profile?.full_name || "",
         avatar_url: profile?.avatar_url || "",
         friendship_id: friendship.id
       };
@@ -273,7 +269,7 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
     // Fetch users who are not friends or have no pending requests
     const { data: profilesData, error } = await supabase
       .from("profiles")
-      .select("id, username, full_name, avatar_url")
+      .select("id, username, avatar_url")
       .not("id", "in", `(${Array.from(excludedUserIds).join(',')})`)
       .limit(10);
 
@@ -285,7 +281,6 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
     const suggestionsList: Friend[] = (profilesData || []).map(profile => ({
       id: profile.id,
       username: profile.username,
-      full_name: profile.full_name || "",
       avatar_url: profile.avatar_url || "",
       friendship_id: ""
     }));
@@ -345,7 +340,6 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
                         </Avatar>
                         <div>
                           <p className="font-medium">{friend.username}</p>
-                          <p className="text-sm text-muted-foreground">{friend.full_name}</p>
                         </div>
                       </div>
                       <Button
@@ -381,7 +375,6 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
                         </Avatar>
                         <div>
                           <p className="font-medium">{request.username}</p>
-                          <p className="text-sm text-muted-foreground">{request.full_name}</p>
                         </div>
                       </div>
                       <div className="flex gap-2">
@@ -426,7 +419,6 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
                         </Avatar>
                         <div>
                           <p className="font-medium">{request.username}</p>
-                          <p className="text-sm text-muted-foreground">{request.full_name}</p>
                         </div>
                       </div>
                       <Button
@@ -462,7 +454,6 @@ export const FriendsList = ({ userId }: FriendsListProps) => {
                         </Avatar>
                         <div>
                           <p className="font-medium">{suggestion.username}</p>
-                          <p className="text-sm text-muted-foreground">{suggestion.full_name}</p>
                         </div>
                       </div>
                       <Button
